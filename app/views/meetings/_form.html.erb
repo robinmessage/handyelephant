@@ -1,0 +1,23 @@
+<%= form_for (@meeting) do |f|%>
+
+ <div class="field">
+	 <%= f.label :title%>
+	 <%= f.text_field :title %>
+ </div>	
+ <div class="field">
+	 <%= f.label :description%>
+	 <%= f.text_area :description %>
+ </div>
+
+ <div class="field">
+	 <%= f.label :meeting_date%>
+	 <%= f.text_field :meeting_date %>
+ </div>
+
+ <p>
+    <%= f.label :staffmember_tokens, "Staff Members" %><br />
+    <%= f.text_field :staffmember_tokens %>    
+  </p>
+ <%=f.submit%>
+<%end%>
+

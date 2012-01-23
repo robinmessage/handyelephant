@@ -1,0 +1,33 @@
+= Migration SQL Generator
+
+This is a Rails plugin to generate SQL from migrations.  
+
+It achieves this by monkey patching the definitions of ActiveRecord::Base.connection.execute and other  related methods.
+
+It has only been tested with the sqlserver and mysql adapters (see limitations).  If you test it with another adapter and it works, please let me know!
+
+== Installation
+
+script/plugin install git://github.com/muness/migration_sql_generator.git
+
+== Usage
+
+rake db:generate:migration_sql
+
+== Known limits
+
+* May fail on migrations that perform CRUD via ActiveRecord methods
+* With the mysql adapter, fails on change_column, rename_column
+* Fails on redhillonrails_core plugin with the mysql adapter
+
+== Credits
+
+* Muness Alrubaie, Relevance Inc.
+
+Shout out to Jay Fields for the original code this plugin grew out of: http://blog.jayfields.com/2006/11/rails-generate-sql-from-migrations.html
+
+== License
+
+Copyright Relevance, Inc. 2009
+
+You may use, copy and redistribute this library under the MIT license.

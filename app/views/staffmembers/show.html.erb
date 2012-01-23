@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Forename:</b>
+  <%= @staffmember.forename %>
+</p>
+
+<p>
+  <b>Surname:</b>
+  <%= @staffmember.surname %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @staffmember.position %>
+</p>
+
+<p>
+  <b>Is manager:</b>
+  <%= @staffmember.is_manager %>
+</p>
+
+
+<%= link_to 'Edit', edit_staffmember_path(@staffmember) %> |
+<%= link_to 'Back', staffmembers_path %>

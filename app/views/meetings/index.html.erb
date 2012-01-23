@@ -1,0 +1,24 @@
+<h1>Meetings</h1>
+
+<%@meetings.each do |meeting|%>
+	<h2><%=meeting.title%></h2>
+	<div><%=meeting.location ? meeting.location.title : "Unknown Location"%>
+		<span style="float:right;font-style:italic">
+			<%=meeting.meeting_date ? meeting.meeting_date.strftime("%A the %-d of %B, %Y at %H:%M") : "Unknown time"%>
+		</span>
+	</div>
+	<p><%=meeting.description%></p>
+	<h3>Attendees</h3>
+	<ul>
+		<%meeting.staffmembers.each do |s|%>
+			<li><%=link_to("#{s.forename} #{s.surname}", s)%></li>
+		<%end%>
+	</ul>
+	<div>
+		<%=link_to "Edit", edit_meeting_path(meeting)%>
+	</div>
+	</div>
+	<hr />
+<%end%>
+
+<%=link_to "New", new_meeting_path%>
